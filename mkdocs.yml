@@ -26,6 +26,13 @@ theme:
       primary: teal
       accent: lime
 
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - API Documentation: redocly.md
+
 extra:
   social:
     - icon: fontawesome/brands/github-alt
@@ -48,6 +55,9 @@ markdown_extensions:
 - pymdownx.superfences
 - pymdownx.mark
 - attr_list
-    
+
+extra_javascript:
+  - https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js
+
 copyright: |
   &copy; 2024 <a href="https://github.com/niharamayurawasala"  target="_blank" rel="noopener">Nihara Mayurawasala</a>

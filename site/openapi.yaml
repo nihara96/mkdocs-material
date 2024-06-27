@@ -1,0 +1,183 @@
+openapi: 3.0.0
+info:
+  title: Indexify API
+  description: Indexify is a an open source data framework featuring a real-time extraction engine and pre-built extraction adapters. Build fast AI applications with reliability and precision, driving smarter decisions from your data.
+  version: 1.0.0
+  x-logo:
+    url: https://www.getindexify.io/Indexify_Logo_Wordmark.svg
+    altText: Indexify
+    href: https://www.getindexify.io/
+servers:
+  - url: https://www.getindexify.io
+tags:
+  - name: Namespace
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
+security:
+  - apiKeyAuth: []
+
+paths:
+  /namespaces:
+    post:
+      tags:
+        - Namespace
+      summary: Create Namespace
+      operationId: createNamespace
+      description: This endpoint allows the creation of a new namespace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: ''
+                extraction_graph: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Namespace
+      summary: List Namespace
+      operationId: listNamespace
+      description: >-
+        This endpoint retrieves a list of all data namespaces registered on the
+        server.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namespaces/{namespace}:
+    get:
+      tags:
+        - Namespace
+      summary: Get Namespace
+      operationId: getNamespace
+      description: This endpoint retrieves a specific namespace by its name.
+      parameters:
+        - name: namespace
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namespaces/{namespace}/extraction_graph:
+    post:
+      tags:
+        - Namespace
+      summary: Create Extraction Graph
+      operationId: createExtractionGraph
+      description: This endpoint adds an extraction graph to a specific namespace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: ''
+                config: {}
+      parameters:
+        - name: namespace
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namespaces/{namespace}/upload_file:
+    post:
+      tags:
+        - Namespace
+      summary: Upload Files
+      operationId: uploadFile
+      description: >-
+        The endpoint allows upload of files to a specific namespace associated
+        with an extraction graph
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                extraction_graph_names: []
+                id: ''
+      parameters:
+        - name: namespace
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namespaces/{namespace}/add_texts:
+    post:
+      tags:
+        - Namespace
+      summary: Upload Text Documents
+      operationId: addTexts
+      description: The endpoint allows uploading raw texts to a specific namespace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                documents: []
+                extraction_graph_names: ''
+      parameters:
+        - name: namespace
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namespaces/{namespace}/search:
+    post:
+      tags:
+        - Namespace
+      summary: Retrieve Index
+      operationId: retrieveIndex
+      description: The endpoint allows vector index search on a specific namespace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                index: ''
+                query: ''
+                k: 3
+                filters: []
+      parameters:
+        - name: namespace
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

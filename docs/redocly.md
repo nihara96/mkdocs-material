@@ -4,7 +4,7 @@
   <div id="redoc-container"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      Redoc.init('openapi.yaml', {}, document.getElementById('redoc-container'));
+      Redoc.init('/openapi.yaml', {}, document.getElementById('redoc-container'));
     });
   </script>
 </div>

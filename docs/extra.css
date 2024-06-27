@@ -1,0 +1,15 @@
+/* extra.css */
+.full-width #mkdocs-navigation,
+.full-width .md-sidebar {
+  display: none;
+}
+
+.full-width .md-content {
+  margin-left: 0;
+  width: 100%;
+}
+
+.full-width .md-main {
+  max-width: 100%;
+  padding: 0;
+}

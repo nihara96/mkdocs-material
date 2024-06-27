@@ -59,5 +59,8 @@ markdown_extensions:
 extra_javascript:
   - https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js
 
+extra_css:
+  - extra.css
+
 copyright: |
   &copy; 2024 <a href="https://github.com/niharamayurawasala"  target="_blank" rel="noopener">Nihara Mayurawasala</a>

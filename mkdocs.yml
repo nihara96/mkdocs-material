@@ -58,6 +58,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js
+  - custom.js
 
 extra_css:
   - extra.css

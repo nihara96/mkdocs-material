@@ -4,7 +4,7 @@ info:
   description: Indexify is a an open source data framework featuring a real-time extraction engine and pre-built extraction adapters. Build fast AI applications with reliability and precision, driving smarter decisions from your data.
   version: 1.0.0
   x-logo:
-    url: https://www.getindexify.io/Indexify_Logo_Wordmark.svg
+    url: https://getindexify.ai/images/logos/base2.svg
     altText: Indexify
     href: https://www.getindexify.io/
 servers:

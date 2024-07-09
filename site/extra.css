@@ -1,9 +1,9 @@
 /* extra.css */
 /* Hide the sidebar only when the body has the class 'hide-sidebar' */
 body.hide-sidebar .md-sidebar--primary {
-  display: none;
+  display: none !important;
 }
 
 body.hide-sidebar .md-main__inner {
-  margin-left: 0;
+  margin-left: 0 !important;
 }
